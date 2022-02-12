@@ -1,1 +1,5 @@
-# favdroid
+# FavDroid
+
+WIP
+
+Android関連のGitHubリポジトリやAndroid Developersのアップデート情報を収集するアプリを作っています

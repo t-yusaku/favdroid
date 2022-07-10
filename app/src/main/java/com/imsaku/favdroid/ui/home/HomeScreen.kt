@@ -33,10 +33,14 @@ fun HomeScreen(viewModel: HomeViewModel) {
 @Composable
 fun HomeScreen(uiState: HomeUiState) {
     Scaffold(
-        topBar = { HomeAppBar() }
-    ) {
-        RepoList(contents = uiState.contents)
-    }
+        topBar = { HomeAppBar() },
+        content = { padding ->
+            RepoList(
+                contents = uiState.contents,
+                Modifier.padding(padding)
+            )
+        }
+    )
 }
 
 @Composable
@@ -50,7 +54,7 @@ fun HomeAppBar() {
 
 
 @Composable
-fun RepoList(contents: List<Feed>) {
+fun RepoList(contents: List<Feed>, modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = Modifier.fillMaxWidth()
     ) {
